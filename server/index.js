@@ -66,7 +66,7 @@ const data = {
 app.get("/", async (_req, res) => {
   //res.send(`<h1>Hello from React</h1>`);
   const index = readFileSync(`public/index.html`, "utf8");
-  const htmlString = renderToString(<App />);
+  const htmlString = renderToString(<App {...data} />);
   res.send(index.replace("{{rendered}}", htmlString));
 });
 
