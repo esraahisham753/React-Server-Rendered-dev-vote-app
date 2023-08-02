@@ -63,6 +63,10 @@ const data = {
   ],
 };
 
+app.get("/data", async (_req, res) => {
+  res.json(data);
+});
+
 app.get("/", async (_req, res) => {
   //res.send(`<h1>Hello from React</h1>`);
   const index = readFileSync(`public/index.html`, "utf8");
